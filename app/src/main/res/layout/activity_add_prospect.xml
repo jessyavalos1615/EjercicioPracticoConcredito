@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddProspect">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="30dp">
+
+            <EditText
+                android:id="@+id/prospectName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/prospect_name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/prospectLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/last_name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prospectName" />
+
+            <EditText
+                android:id="@+id/prospectSecondLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/second_last_name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prospectLastName" />
+
+            <EditText
+                android:id="@+id/prospectStreet"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/street"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prospectSecondLastName" />
+
+            <EditText
+                android:id="@+id/prospectNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.066"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prospectStreet" />
+
+            <EditText
+                android:id="@+id/prospectSuburb"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/suburb"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.064"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prospectNumber" />
+
+            <EditText
+                android:id="@+id/prospectZip"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/zip_code"
+                android:maxLength="6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prospectSuburb" />
+
+            <EditText
+                android:id="@+id/prospectPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/phone_number"
+                android:maxLength="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prospectZip" />
+
+            <EditText
+                android:id="@+id/prospectRfc"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/rfc"
+                android:maxLength="18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.079"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prospectPhone" />
+
+            <Button
+                android:id="@+id/btnSaveProspect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:onClick="saveProspect"
+                android:text="@string/guardar_prospecto" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:onClick="cancelAddProspect"
+                android:text="@string/cancelar" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

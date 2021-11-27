@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Ejercicio Practico Concredito</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="prospect_name">Nombre</string>
+    <string name="last_name">Apellido paterno</string>
+    <string name="second_last_name">Apellido Materno</string>
+    <string name="street">Dirección</string>
+    <string name="number">Número exterior</string>
+    <string name="suburb">Colonia</string>
+    <string name="zip_code">Código postal</string>
+    <string name="phone_number">Número telefonico</string>
+    <string name="rfc">RFC</string>
+    <string name="guardar_prospecto">Guardar prospecto</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="datos_del_prospecto">Datos del prospecto.</string>
+    <string name="obcervaciones">Obcervaciones.</string>
+    <string name="evaluar">Evaluar</string>
+</resources>
