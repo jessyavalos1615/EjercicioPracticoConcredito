@@ -23,4 +23,5 @@
     <string name="datos_del_prospecto">Datos del prospecto.</string>
     <string name="obcervaciones">Obcervaciones.</string>
     <string name="evaluar">Evaluar</string>
+    <string name="agregar_archivo">Agregar archivo</string>
 </resources>

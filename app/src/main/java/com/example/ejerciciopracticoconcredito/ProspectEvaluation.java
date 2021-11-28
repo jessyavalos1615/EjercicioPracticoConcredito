@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -13,8 +14,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ProspectEvaluation extends AppCompatActivity {
 
+    LinearLayout linearLayoutFilesEvaluate;
     EditText txtObcercaciones;
     Button btnUpdateProspect;
     RadioGroup rgStatus;
@@ -52,6 +57,7 @@ public class ProspectEvaluation extends AppCompatActivity {
         rbtnRechazar = findViewById(R.id.rbtnRechazar);
         rbtnAutorizar = findViewById(R.id.rbtnAutorizar);
         btnUpdateProspect = findViewById(R.id.btnUpdateProspect);
+        linearLayoutFilesEvaluate = findViewById(R.id.linearLayoutFilesEvaluate);
     }
 
     @SuppressLint("SetTextI18n")
@@ -63,6 +69,16 @@ public class ProspectEvaluation extends AppCompatActivity {
         prospectPhoneNumber.setText("Telefono: " + prospecto.getPhone());
         prospectRFC.setText("RFC: " + prospecto.getRfc());
         prospectCurrentStatus.setText("Estado: " + prospecto.getStatus());
+
+        List<String> filesList = Arrays.asList(prospecto.getFiles().split(","));
+
+        for (String name : filesList){
+            TextView textViewFiles= new TextView(this);
+            textViewFiles.setTextSize(20);
+            textViewFiles.setPadding(20,20, 0,0);
+            textViewFiles.setText(name);
+            linearLayoutFilesEvaluate.addView(textViewFiles);
+        }
 
         if (!prospecto.getStatus().equals("Enviado")) {
             btnUpdateProspect.setVisibility(View.GONE);

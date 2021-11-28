@@ -26,6 +26,7 @@ public class DB extends SQLiteOpenHelper  {
     public static final String COLUMN_RFC = "rfc";
     public static final String COLUMN_STATUS = "status";
     public static final String COLUMN_OBSERVACION = "observacion";
+    public static final String COLUMN_FILES = "files";
 
     public DB(Context context)
     {
@@ -46,7 +47,8 @@ public class DB extends SQLiteOpenHelper  {
                         "phone text,\n" +
                         "rfc text,\n" +
                         "status text, \n" +
-                        "observacion text)"
+                        "observacion text, \n" +
+                        "files text)"
         );
     }
 
@@ -71,6 +73,7 @@ public class DB extends SQLiteOpenHelper  {
             contantValues.put(COLUMN_RFC,prospecto.getRfc());
             contantValues.put(COLUMN_STATUS,prospecto.getStatus());
             contantValues.put(COLUMN_OBSERVACION, prospecto.getObservacion());
+            contantValues.put(COLUMN_FILES, prospecto.getFiles());
 
             db.insert(TABLE_NAME, null, contantValues);
             db.close();
@@ -111,6 +114,7 @@ public class DB extends SQLiteOpenHelper  {
                 prospecto.setRfc(cursor.getString(cursor.getColumnIndex(COLUMN_RFC)));
                 prospecto.setStatus(cursor.getString(cursor.getColumnIndex(COLUMN_STATUS)));
                 prospecto.setObservacion(cursor.getString(cursor.getColumnIndex(COLUMN_OBSERVACION)));
+                prospecto.setFiles(cursor.getString(cursor.getColumnIndex(COLUMN_FILES)));
             } while (cursor.moveToNext());
         }
         return prospecto;

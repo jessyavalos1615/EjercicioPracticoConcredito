@@ -13,6 +13,7 @@ public class Prospecto {
     private String rfc;
     private String status;
     private String observacion;
+    private String files;
 
     public Prospecto() {
     }
@@ -113,6 +114,14 @@ public class Prospecto {
         this.observacion = observacion;
     }
 
+    public String getFiles() {
+        return files;
+    }
+
+    public void setFiles(String files) {
+        this.files = files;
+    }
+
     @Override
     public String toString() {
         return "Prospecto{" +
@@ -128,6 +137,7 @@ public class Prospecto {
                 ", rfc='" + rfc + '\'' +
                 ", status='" + status + '\'' +
                 ", observacion='" + observacion + '\'' +
+                ", files='" + files + '\'' +
                 '}';
     }
 }
