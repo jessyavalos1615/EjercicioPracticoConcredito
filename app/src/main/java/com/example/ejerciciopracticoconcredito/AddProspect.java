@@ -39,15 +39,21 @@ public class AddProspect extends AppCompatActivity {
         if (resValidation) {
             Toast.makeText(getApplicationContext(), "Se guardaran los datos.", Toast.LENGTH_SHORT).show();
             try {
-                boolean res = db.addProspect(prospectName.getText().toString(),
-                            prospectLastName.getText().toString(),
-                            prospectSecondLastName.getText().toString(),
-                            prospectStreet.getText().toString(),
-                            prospectNumber.getText().toString(),
-                            prospectSuburb.getText().toString(),
-                            prospectZip.getText().toString(),
-                            prospectPhone.getText().toString(),
-                            prospectRfc.getText().toString(), "Enviado");
+                Prospecto prospecto = new Prospecto();
+                prospecto.setName(prospectName.getText().toString());
+                prospecto.setLast_name(prospectLastName.getText().toString());
+                prospecto.setSecond_last_name(prospectSecondLastName.getText().toString());
+                prospecto.setStreet(prospectStreet.getText().toString());
+                prospecto.setNumber(prospectNumber.getText().toString());
+                prospecto.setSuburb(prospectSuburb.getText().toString());
+                prospecto.setZip(prospectZip.getText().toString());
+                prospecto.setPhone(prospectPhone.getText().toString());
+                prospecto.setRfc(prospectRfc.getText().toString());
+                prospecto.setStatus("Enviado");
+                prospecto.setObservacion("");
+
+                boolean res = db.addProspect(prospecto);
+
                 if (res) {
                     Toast.makeText(getApplicationContext(), "Prospecto capturado con exito.", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(AddProspect.this, MainActivity.class));

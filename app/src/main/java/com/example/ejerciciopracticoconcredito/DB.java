@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -55,21 +56,21 @@ public class DB extends SQLiteOpenHelper  {
         onCreate(db);
     }
 
-    public boolean addProspect(String name,String last_name,String second_last_name,String street, String number, String suburb, String zip, String phone, String rfc, String status){
+    public boolean addProspect(Prospecto prospecto){
         try {
             SQLiteDatabase db=this.getWritableDatabase();
             ContentValues contantValues = new ContentValues();
-            contantValues.put(COLUMN_NAME,name);
-            contantValues.put(COLUMN_LASTNAME, last_name);
-            contantValues.put(COLUMN_SECONDLASTNAME,second_last_name);
-            contantValues.put(COLUMN_STREET,street);
-            contantValues.put(COLUMN_NUMBER,number);
-            contantValues.put(COLUMN_SUBURB,suburb);
-            contantValues.put(COLUMN_ZIP,zip);
-            contantValues.put(COLUMN_PHONE,phone);
-            contantValues.put(COLUMN_RFC,rfc);
-            contantValues.put(COLUMN_STATUS,status);
-            contantValues.put(COLUMN_OBSERVACION, "");
+            contantValues.put(COLUMN_NAME,prospecto.getName());
+            contantValues.put(COLUMN_LASTNAME, prospecto.getLast_name());
+            contantValues.put(COLUMN_SECONDLASTNAME,prospecto.getSecond_last_name());
+            contantValues.put(COLUMN_STREET,prospecto.getStreet());
+            contantValues.put(COLUMN_NUMBER, prospecto.getNumber());
+            contantValues.put(COLUMN_SUBURB,prospecto.getSuburb());
+            contantValues.put(COLUMN_ZIP,prospecto.getZip());
+            contantValues.put(COLUMN_PHONE,prospecto.getPhone());
+            contantValues.put(COLUMN_RFC,prospecto.getRfc());
+            contantValues.put(COLUMN_STATUS,prospecto.getStatus());
+            contantValues.put(COLUMN_OBSERVACION, prospecto.getObservacion());
 
             db.insert(TABLE_NAME, null, contantValues);
             db.close();
@@ -116,7 +117,7 @@ public class DB extends SQLiteOpenHelper  {
     }
 
     @SuppressLint("Range")
-    public ArrayList<Prospecto> getAllStudentContacts(){
+    public ArrayList<Prospecto> getAllProspects(){
         ArrayList<Prospecto> arraylist= new ArrayList<>();
         SQLiteDatabase db=this.getReadableDatabase();
         @SuppressLint("Recycle") Cursor cursor=db.rawQuery("Select * from " + TABLE_NAME,null);

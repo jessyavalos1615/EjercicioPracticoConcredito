@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout linearLayoutRecords = (LinearLayout) findViewById(R.id.linearLayoutRecords);
         linearLayoutRecords.removeAllViews();
 
-        List<Prospecto> prospectoList = db.getAllStudentContacts();
+        List<Prospecto> prospectoList = db.getAllProspects();
 
         if (prospectoList.size() > 0){
             for (Prospecto prospecto : prospectoList) {
